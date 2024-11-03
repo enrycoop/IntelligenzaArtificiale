@@ -1,4 +1,4 @@
-#include "Perceptron.h"
+#include "../include/Perceptron.h"
 
 void Perceptron::fit(std::vector<std::vector<double>>& X, std::vector<double>& y, bool verbose=false)
 {
@@ -50,30 +50,6 @@ double Perceptron::netInput(const std::vector<double>& X) const
     result += (X.at(i) * this->weights.at(i + 1));
   }
   return result + this->weights.at(0);
-}
-
-void Perceptron::featureSizeCheck(const std::vector<std::vector<double>>& X, const std::vector<double>& y) const
-{
-  if (X.empty())
-  {
-    throw std::length_error("Passed an empty sample vector!");
-  }
-
-  if (X.size() != y.size())
-  {
-    throw std::length_error("Size of X [" + std::to_string(X.size() - 1) +
-      "] don't match with y[" + std::to_string(y.size()) + "]");
-  }
-
-  size_t featureSize = X.at(0).size();
-  for (int i = 0; i < X.size(); ++i)
-  {
-    if (X.at(i).size() != featureSize)
-    {
-      throw std::length_error("Size of X [" + std::to_string(X.size() - 1) +
-        "] don't match with other sample size!");
-    }
-  }
 }
 
 double Perceptron::predict(const std::vector<double>& X) const

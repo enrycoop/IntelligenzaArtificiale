@@ -3,6 +3,7 @@
 
 #pragma once
 
-#include "Perceptron.h"
+#include "include/Perceptron.h"
+#include "include/Model.h"
 #include <iostream>
 

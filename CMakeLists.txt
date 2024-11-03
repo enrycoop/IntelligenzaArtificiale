@@ -12,7 +12,13 @@ endif()
 project ("IntelligenzaArtificiale")
 
 # Aggiungere l'origine all'eseguibile di questo progetto.
-add_executable (IntelligenzaArtificiale "IntelligenzaArtificiale.cpp" "IntelligenzaArtificiale.h" "Perceptron.h" "Perceptron.cpp")
+add_executable (IntelligenzaArtificiale 
+"IntelligenzaArtificiale.cpp"
+"IntelligenzaArtificiale.h" 
+"include/Perceptron.h" 
+"src/Perceptron.cpp" 
+"include/Model.h" 
+"src/Model.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET IntelligenzaArtificiale PROPERTY CXX_STANDARD 20)

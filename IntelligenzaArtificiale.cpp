@@ -133,18 +133,19 @@ int main()
   //stampa_campioni(X);
   //stampa(y);
 
+  unique_ptr<Model> model = make_unique<Perceptron>(0.1, 10);
 
-	Perceptron model(0.1, 10);
-  model.fit(X, y, true);
+  model->fit(X, y, true);
 
   for (int j=0; j < X_test.size(); ++j)
   {
     //std::string pred = doubleToCategory(model.predict(X_test.at(j)));
     //std::string cat = doubleToCategory(y.at(j));
 
-    double pred = model.predict(X_test.at(j));
+    double pred = model->predict(X_test.at(j));
     double cat = y_test.at(j);
-    cout << "prediction: " << pred << " True class: " << cat << (pred==cat ? " OK" : " WRONG") << endl;
+    cout << "prediction: " << pred << " True class: " << 
+      cat << (pred==cat ? " OK" : " WRONG") << endl;
   }
     
 	//cout << "prediction: " << model.predict(iris) << endl;
