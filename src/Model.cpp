@@ -10,7 +10,7 @@ void Model::featureSizeCheck(const std::vector<std::vector<double>>& X, const st
 
   if (X.size() != y.size())
   {
-    throw std::length_error("Size of X [" + std::to_string(X.size() - 1) +
+    throw std::length_error("Size of X [" + std::to_string(X.size()) +
       "] don't match with y[" + std::to_string(y.size()) + "]");
   }
 
